@@ -158,12 +158,12 @@ export default {
     },
     lastUpdate(time) {
       const diff = Math.floor(Date.now() / 1000) - parseInt(time);
-      if (diff == 1) return diff + ' second';
-      if (diff < 60) return diff + ' seconds';
-      if (diff >= 60 && diff < 120) return Math.floor(diff/60) + ' minute';
-      if (diff >= 120) return Math.floor(diff/60) + ' minutes';
-      if (diff >= 3600 && diff < 7200) return Math.floor(diff/3600) + ' hour';
       if (diff >= 7200) return Math.floor(diff/3600) + ' hours';
+      if (diff >= 3600 && diff < 7200) return Math.floor(diff/3600) + ' hour';
+      if (diff >= 120) return Math.floor(diff/60) + ' minutes';
+      if (diff >= 60 && diff < 120) return Math.floor(diff/60) + ' minute';
+      if (diff < 60) return diff + ' seconds';
+      if (diff == 1) return diff + ' second';
     }
   },
   mounted() {
